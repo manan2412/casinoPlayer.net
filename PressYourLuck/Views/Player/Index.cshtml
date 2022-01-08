@@ -1,0 +1,22 @@
+﻿@model Player
+
+<div class="jumbotron">
+    <h1>Welcome to Press Your Luck!</h1>
+</div>
+<form method="post" asp-action="Index">
+    <p> Please enter your name and the number of coins you have to get started.</p>
+    <div class="form-group">
+        <label class="control-label">Name</label>
+        <input style="width:40%" asp-for="@Model.Name" class="form-control" id="input">
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label">TotalCoins</label>
+        <input style="width:40%" asp-for="@Model.TotalCoins" class="form-control" placeholder="0.00" id="input">
+        <span asp-validation-for="@Model.TotalCoins" class="text-danger"></span>
+
+    </div>
+    <button asp-controller="Player" asp-action="Index" class="btn btn-primary">Start Playing!</button>
+
+</form>
